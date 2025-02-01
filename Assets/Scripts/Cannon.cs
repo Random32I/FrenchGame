@@ -11,6 +11,8 @@ public class Cannon : MonoBehaviour
     bool isLoaded;
     [SerializeField] float cooldown;
     [SerializeField] float timeLit;
+    [SerializeField] AudioSource Fuse;
+    [SerializeField] AudioSource Shoot;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class Cannon : MonoBehaviour
         cannonBall.transform.position = cannonballInstance.transform.position;
         cannonBall.SetActive(true);
         cannonBall.GetComponent<Rigidbody>().AddForce((transform.forward) * cannonForce, ForceMode.Impulse);
+        Shoot.Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +49,7 @@ public class Cannon : MonoBehaviour
                 timeLit = Time.timeSinceLevelLoad;
                 isLit = true;
                 isShot = false;
+                Fuse.Play();
             }
         }
     }

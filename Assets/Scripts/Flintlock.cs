@@ -10,6 +10,8 @@ public class Flintlock : MonoBehaviour
     [SerializeField] float unmodifiedForce = 20;
     [SerializeField] GameObject bullet = null;
     [SerializeField] Transform Angle;
+    [SerializeField] AudioSource Fire;
+    [SerializeField] AudioSource Reload;
     bool fired;
 
     string heldHandName;
@@ -36,6 +38,7 @@ public class Flintlock : MonoBehaviour
                 bullet.GetComponent<Rigidbody>().AddForce(transform.parent.forward * unmodifiedForce * gunpowderAmount, ForceMode.VelocityChange);
                 loaded = false;
                 bullet = null;
+                Fire.Play();
             }
         }
     }
@@ -44,8 +47,12 @@ public class Flintlock : MonoBehaviour
 
     public void LoadGun(GameObject newBullet)
     {
-        bullet = newBullet;
-        loaded = true;
+        if (bullet = null)
+        {
+            bullet = newBullet;
+            loaded = true;
+            Reload.Play();
+        }
     }
 
     public void PickedUp()
