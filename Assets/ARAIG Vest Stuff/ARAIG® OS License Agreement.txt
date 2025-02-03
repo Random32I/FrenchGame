@@ -1,0 +1,168 @@
+﻿The following terms and conditions are from IFTech Inventing Future Technology Inc.’s (“IFTech”) ARAIG® As Real As It Gets™ Operating System (“ARAIG® OS”). The terms and conditions are for IFTech’s ARAIG® OS License Agreement (“Agreement”). To receive, access and use of the ARAIG® OS, you must read over this Agreement, agree to it and have approval by IFTech for use of the ARAIG® OS.
+
+YOU AGREE TO ACCEPT THIS Agreement BY CLICKING AN “AGREE” OR SIMILAR BUTTON, WHERE THIS OPTION IS PROVIDED BY IFTech, YOU HAVE SIGNED THIS Agreement, OR IF YOU USE THE ARAIG® OS IN WHOLE OR IN PART IT IS CONSTRUED AS YOUR ACCEPTANCE AND AGREEMENT TO IFTech’s ARAIG® OS Agreement.
+
+IF YOU HAVE READ AND AGREE TO THE TERMS OF THIS Agreement AND IFTech HAS APPROVED OF YOUR USE OF THE ARAIG® OS THEN YOU ARE GIVEN PERMISSION TO USE THE ARAIG® OS. 
+ 
+IF YOU DO NOT AGREE TO THE TERMS OF THIS Agreement OR IFTech HAS NOT APPROVED OF YOUR USE OF THE ARAIG® OS, THEN DO NOT ACCESS THE ARAIG® OS AS YOU ARE NOT PERMITTED TO DO SO. IN ADDITION, IF YOU DO NOT AGREE TO THE TERMS OF THIS Agreement OR IFTech HAS NOT APPROVED OF YOUR USE OF THE ARAIG® OS, YOU ARE REQUIRED TO DESTROY, ERASE, AND DELETE THIS DOCUMENT AND ALL ASSOCIATED ARAIG® OS FILES.
+
+IFTECH INVENTING FUTURE TECHNOLOGY INC. ARAIG® OS AGREEMENT Copyright 2015 – 2022
+
+This IFTech Inventing Future Technology Inc. (“IFTech”) ARAIG® As Real As It Gets™ Operating System License Agreement (“Agreement”) is between the individual or entity (“you” or “Developer”) that accepts it, and IFTech. You agree to accept this License Agreement by clicking an “I have read and agree to the terms and conditions of the ARAIG® OS License Agreement as listed on this web page.” or similar button, where this option is provided by IFTech, you have signed an agreement allowing access to the ARAIG® As Real As It Gets™ Operating System (“ARAIG® OS”), or if you use or access the ARAIG® OS or any part of the ARAIG® OS. Your agreement to these terms also binds your Authorized Users, your company and or organization. If you do not agree to the terms of this Agreement, do not accept it. Before accepting this Agreement, please carefully read it. Capitalized terms used but not defined in the body of this Agreement have the meaning given them in the “Definitions” exhibit.
+Last updated: September 23, 2022
+
+1.	Development License
+
+1.1.	Development License. Conditioned upon compliance with the terms and conditions of this Agreement, IFTech hereby grants you a limited, non-exclusive, personal, revocable, non-sublicensable, royalty-free, and non-transferable license to: (a) use a reasonable number of copies of the ARAIG® OS on computers owned or controlled by you for the purpose of developing and testing applications that are intended for use solely in connection with an IFTech Device, and IFTech Software (“Application”); and (b) modify and incorporate into your Application any sample code provided in the ARAIG® OS.
+
+1.1.1.	This license includes the non-exclusive license and right to use (i) the ARAIG® OS to make applications, content, games, demos, movies, etc, (collectively and generally referred to as “Developer Content”) that run on hardware, mobile hardware and software products (“Approved ARAIG® Products”) and which may incorporate the ARAIG® OS in whole or in part in binary or object code; and (ii) to use the ARAIG® OS to create derivative works of the ARAIG® OS itself (“ARAIG® OS Derivatives” as further defined below), whether in source, binary, or object form, in whole or in part, including third party software unless otherwise noted.
+
+1.1.2.	ARAIG® OS Derivatives are further defined as source, binary or object code derived exclusively from the ARAIG® OS by you; provided, however, that ARAIG® OS Derivatives do not include the Developer Content (engines, utilities, applications, content, games or demos) which may be developed using the ARAIG® OS. By way of example a mobile application or game or demo that is developed using the ARAIG® OS would not be a ARAIG® OS Derivative, nor would a utility or tool set in a pre-existing game engine that is adapted to work with the ARAIG® OS be a ARAIG® OS Derivative. By way of example, but not limitation, a ARAIG® OS Derivative is or would be either (i) an adaptation of a utility or piece of code from the ARAIG® OS to improve efficiency; or (ii) an addition of code or improvement to the ARAIG® OS that adds functionality.
+
+1.1.3.	For the sake of clarification when you use the ARAIG® OS (including ARAIG® OS Derivatives) in or with Developer Content, you retain all rights to your Developer Content, and you have no obligations to share or license Developer Content (including your source and object code) with IFTech or any third parties; provided, however, IFTech retains all rights to the ARAIG® OS and the ARAIG® OS Derivatives that may be incorporated into your Developer Content.
+
+1.1.4.	You, the recipient and user of the ARAIG® OS, hereby agree and accept that IFTech shall own all right, title and interest to the intellectual property rights, including, but not limited to copyright, trademark and patent rights, to any ARAIG® OS Derivatives that you may create, and you hereby assign any and all such rights to such ARAIG® OS Derivatives to IFTech, subject to the following.
+
+1.1.5.	We hereby grant to you the fully paid up, no-charge, royalty-free, world-wide, in perpetuity, non-exclusive right and license to use these ARAIG® OS Derivatives solely in conjunction with the ARAIG® OS (or any components of the ARAIG® OS) and/or Developer Content on IFTech ARAIG® Products as set forth herein.
+
+1.1.6.	Furthermore, for the sake of clarification, IFTech and its assignees and licensees shall be free to use such ARAIG® OS Derivatives without any approval from you and without compensation or attribution to you.
+
+1.1.7.	You also agree upon IFTech’s request to provide the source and binary code of any ARAIG® OS Derivatives to IFTech. FAILURE TO COMPLY WITH THIS REQUEST IS THE BASIS FOR AUTOMATIC TERMINATION OF THIS LICENSE BY IFTECH.
+
+1.2.	Restrictions. The license granted to you in Section 1, 1.1, and 1.1.1-1.1.7. is subject to the following restrictions, as well as others listed in this Agreement:
+
+1.2.1.	 Except as expressly permitted in Section 1 you may not publish, distribute or copy the ARAIG® OS, and (b) you may not modify or create derivative works of the ARAIG® OS.
+
+1.2.2.	You may use the ARAIG® OS solely in connection with an IFTech Device and/or IFTech Software.
+
+1.2.3.	You may not, and may not enable others to, reverse engineer, decompile, disassemble or otherwise attempt to reconstruct, identify or discover any source code, underlying ideas, techniques, or algorithms in the IFTech Software, the IFTech Device or any software that forms part of the ARAIG® OS, nor attempt to circumvent any related security measures (except as and only to the extent any foregoing restriction is prohibited by applicable law or permitted by applicable law notwithstanding the foregoing restriction, or to the extent as may be permitted by licensing terms governing use of any open source software components or sample code included within the ARAIG® OS).
+
+1.2.4.	You may not remove, obscure, or alter any proprietary rights or confidentiality notices within the ARAIG® OS or any software, documentation or other materials in it or supplied with it.
+
+1.2.5.	1.2.5. You may not create Applications or other software that prevent or degrade the interaction of Applications developed by others with the IFTech Software.
+
+1.3.	Updates. The terms of this Agreement will apply to any Updates that IFTech makes available to you. You agree that Updates may require you to change or update your Application, and may affect your ability to use, access or interact with the IFTech Software, the IFTech website, the IFTech online store, and/or the ARAIG® OS.
+
+1.4.	Trademarks. You may indicate that your Application is “ARAIG® Operational” or “ARAIG® Ready”. However, unless provided in an agreement between you and IFTech, you may not otherwise use “IFTech”, “ARAIG®”, “ARAIG® As Real As It Gets™”, “As Real As It Gets™” or any other trademark of IFTech in connection with your Application or company, or in any URL, product, service, name field or logos created by you without express permission from IFTech.
+
+2.	Distribution License
+2.1.	2.1. Distribution License. Conditioned upon compliance with the terms and conditions of this Agreement, IFTech hereby grants you a limited, non-exclusive, personal, revocable, royalty-free, non-transferable license under IFTech’s applicable intellectual property rights to the extent necessary to: (a) copy and distribute (or have copied and distributed) the IFTech Redistributables, solely as compiled with, incorporated into, or packaged with, your Application; and (b) to make (but not have made), use, sell, offer for sale and import your Application.
+
+2.2.	Restrictions. The license granted to you in Section 2.1 is subject to the following restrictions, as well as others listed in this Agreement:
+
+2.2.1.	Your Application may not be for a High-Risk Use (as defined in Section 4.1).
+
+2.2.2.	You may not, directly or indirectly, publish, post or otherwise make available the IFTech Redistributables other than as compiled with, incorporated into, or packaged with, your Application.
+
+2.2.3.	You may not, and may not enable others to, distribute the Non-Redistributable Materials.
+
+2.2.4.	The “ARAIG® OS License Agreement.txt” must be included with all other IFTech Redistributables. 
+
+3.	Open Source Materials, Other Licenses
+
+3.1.	 The ARAIG® OS may include software or other materials that are provided under a separate license agreement, and that separate license will govern the use of such software or other materials in the event of a conflict with this Agreement. Any such separate license agreement may be indicated in the license, notice, or readme files distributed with the applicable software or other materials or in related documentation.
+
+4.	No High Risk Use; Acknowledgment and Waiver
+
+4.1.	Notwithstanding anything in this Agreement, you are not licensed to, and you agree not to, use, copy, sell, offer for sale, or distribute the ARAIG® OS, IFTech Devices, IFTech Software or IFTech Redistributables (whether compiled with, incorporated into, or packaged with your Application or otherwise), for or in connection with uses where failure or fault of the IFTech Device, IFTech Software, IFTech Redistributables or your Application could knowingly lead to death or serious bodily injury of any person, or to severe physical or environmental damage (“High Risk Use”). ANY SUCH USE IS STRICTLY PROHIBITED.
+
+4.2.	You acknowledge the ARAIG® OS may allow you to develop Applications that involve virtual and/or real-world activities. If such activities enable the control of motorized or mechanical equipment, or any other systems, machines or devices, and you elect to use the ARAIG® OS in such a way, you must take steps to design and test your Applications to ensure that your Applications do not knowingly present risks of personal injury or death, property damage, or other losses. The IFTech Device, the IFTech Software, the IFTech Redistributables and other software in the ARAIG® OS may not always function as intended. You must design your Applications so that any foreseeable failure of an IFTech Device, the IFTech Software, an IFTech Redistributable and/or such other software does not cause personal injury or death, property damage, or other losses. If you choose to use the ARAIG® OS, (i) you assume all risk that use of the IFTech Device, the IFTech Software, the IFTech Redistributables and/or such other software by you or by any others causes any harm or loss, including to the End Users of your Applications or to third parties, (ii) you hereby waive, on behalf of yourself and your Authorized Users, all claims against IFTech and its affiliates related to such use, harm or loss (including, but not limited to, any claim that a IFTech Device, the IFTech Software, a IFTech Redistributable or such other software is defective), and (iii) you agree to hold IFTech and its affiliates harmless from such claims.
+
+5.	Confidentiality and Privacy
+
+5.1.	Alpha and Beta Software etc. Obligations. You acknowledge and agree that IFTech may share alpha or beta software or hardware with you that it identifies as non-public. If so, you agree not to disclose such software or hardware to others without the prior written consent of IFTech until the time, if any, it is made public by IFTech, and to use such software or hardware only for the purposes expressly permitted by this Agreement.
+
+5.2.	IFTech Use of Assets. Subject to the terms and conditions of this Agreement, you grant to IFTech and its affiliates a non-exclusive,  non-transferable, worldwide and royalty-free limited license to use, reproduce, display, perform, publish and distribute screenshots, elements, assets, photographic, graphic or video reproductions or fragments of your Application in any medium or media, solely for purposes of promotion of your Application or of IFTech and its technology and business. This license will terminate if We terminate this Agreement, or, if you terminate it, if you inform Us you have terminated it, except that in both cases the license will continue after termination with respect to any materials We created and first distributed prior to our termination or your notice of termination to Us.
+
+5.3.	Your Information. IFTech may collect personal information provided by you or your Authorized Users to IFTech in connection with the ARAIG® OS, and may collect other information from you or your Authorized Users, including technical, non-personally identifiable and/or aggregated information such as usage statistics, hardware configuration, problem / fault data, IP addresses, version number of the ARAIG® OS, information about which tools and/or services in the ARAIG® OS are being used and how they are being used, and any other information described in IFTech’s privacy policy, currently available in the Terms and Conditions at www.iftech-technologies.com. IFTech may use the information collected to facilitate the provision of Updates and other services to you, to verify compliance with, and enforce, the terms of this Agreement, to improve the ARAIG® OS and IFTech’s products, and for any other purposes set out in IFTech’s privacy policy (these uses, collectively, are “Permitted Uses”). By submitting information about you and/or your Authorized Users to IFTech through your access and use of the ARAIG® OS, you consent to IFTech’s collection and use of the information for the Permitted Uses and represent that you have obtained all consents and permits necessary under applicable law to disclose your Authorized Users’ information to IFTech for the Permitted Uses. You further agree that IFTech may provide any information collected under this Section 5.3, including your or your Authorized Users’ username, IP address or other identifying information to law enforcement authorities or as required by applicable law or regulation.
+
+6.	Ownership and Feedback
+
+6.1.	 Ownership. Except for the license rights granted by you in Section 5.2, and IFTech’s ownership of the IFTech Software, the IFTech online store, and the IFTech Redistributables, IFTech agrees that it obtains no right, title or interest from you (or your licensors) under this Agreement in or to any of your Applications, including any intellectual property rights which subsist in those Applications. As between IFTech and you, IFTech owns all right, title and interest, including all intellectual property rights, in and to the ARAIG® OS, the IFTech Software and the IFTech Redistributables, other than any third-party software or materials incorporated in the ARAIG® OS, and you agree not to contest IFTech’s ownership of any of the foregoing.
+
+6.2.	Feedback. You may (but are not required to) provide feedback, comments, and suggestions (collectively, “Feedback”) to IFTech. You hereby grant to IFTech a non-exclusive, perpetual, irrevocable, paid-up, transferable, sub-licensable, worldwide license under all intellectual property rights covering such Feedback to use, disclose and exploit all such Feedback for any purpose.
+
+7.	Your Obligations and Warranties
+
+7.1.	In addition to your other obligations under this Agreement, you warrant and agree that:
+
+7.1.1.	You are at least 18 years of age and have the right and authority to enter into this Agreement on your own behalf and that of your Authorized Users, or if you are entering into this Agreement on behalf of your company or organization, you have the right and authority to legally bind your company or organization and its Authorized Users.
+
+7.1.2.	You will use the ARAIG® OS only in accordance with all accompanying documentation, in the manner expressly permitted by this Agreement, and your use of the ARAIG® OS, and the marketing, sales and distribution of your Application, will be in compliance with all applicable laws and regulations and all Canadian and local or foreign export and re-export restrictions applicable to the technology and documentation provided under this Agreement (including privacy and data security laws and regulations), and you will not develop any Application which would commit or facilitate the commission of a crime, or other tortious, unlawful, or illegal act.
+
+8.	Agreement and Development Program
+
+8.1.	We reserve the right to change this Agreement, the ARAIG® OS or the IFTech development and licensing program at any time in our discretion without your consent. IFTech will provide you with notice as to any resulting new terms of this Agreement and require that you accept and agree to these new terms or, if you do not agree to the new terms, cease or terminate your use of the ARAIG® OS. Your continued use of the ARAIG® OS after notice of the changes to this Agreement take effect will constitute your acceptance of the changes. If you do not agree to a change, you must stop using the ARAIG® OS and terminate this Agreement in accordance with section 9.2. Any termination of this Agreement by you under this Section 8 (and only this Section 8) will not affect your right, subject to your continued compliance with your obligations under this Agreement, to continue to distribute versions of your Application created and first distributed before termination and will not affect the right of your End Users to continue using such versions of your Application, both of which rights will survive termination.
+
+9.	Term and Termination
+
+9.1.	Term. This Agreement will take effect as of the date you accepted this Agreement by clicking an “AGREE or similar button, where this option has been provided by IFTech, you have signed this agreement, or you use the ARAIG® OS in whole or part which is construed as your acceptance and agreement to IFTech’s ARAIG® OS Agreement, and the term of this agreement will continue to apply until terminated by either you or IFTech as set out below.
+
+9.2.	Termination by You. If you want to terminate this Agreement, you may terminate it by destroying all copies of the ARAIG® OS that are in the possession, custody or control of you, your Authorized Users and your organization.
+
+9.3.	Termination by IFTech. IFTech may at any time, terminate this Agreement with you for any reason or for no reason in IFTech’s sole discretion, including as a result of non-compliance by you with the restrictions in Section 1.2 or Section 2.2, or for other reasons.
+
+9.4.	 Effect of Termination. Upon termination of this Agreement, all rights granted to you under this Agreement will immediately terminate and you must immediately cease all use and destroy all copies of the ARAIG® OS in your and your Authorized Users’ possession, custody or control, and, except as specifically set out in Section 8, cease your distribution of Applications. Sections 1.2, 2.2, 2.2.3, 5.1, 5.2, 6, 9.4, and 10 - 13, and the Definitions exhibit, will survive termination of this Agreement. Termination of this Agreement will not affect the right of your End Users who have downloaded your Application prior to termination to continue using it.
+
+10.	Indemnification.
+
+10.1.	10.1. You agree to indemnify, hold harmless and, at IFTech’s option, defend IFTech and its affiliates and their respective officers, directors, employees, agents, and representatives harmless from any and all judgments, awards, settlements, liabilities, damages, costs, penalties, fines and other expenses (including court costs and reasonable attorneys’ fees) incurred by them arising out of or relating to any third party claim (a) with respect to your Application, including products liability, privacy, or intellectual property infringement claims, or (b) based upon your negligence or willful misconduct or any breach or alleged breach of your representations, warranties, and covenants under this Agreement. In no event may you enter into any settlement or like agreement with a third party that affects IFTech rights or binds IFTech in any way, without the prior written consent of IFTech.
+
+11.	Warranty Disclaimer.
+
+11.1.	THE ARAIG® OS, THE IFTECH SOFTWARE AND THE IFTECH REDISTRIBUTABLES ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. IFTECH, ON BEHALF OF ITSELF AND ITS SUPPLIERS, HEREBY DISCLAIMS ALL REPRESENTATIONS, PROMISES, OR WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, WITH RESPECT TO THE ARAIG® OS, THE IFTECH SOFTWARE AND THE IFTECH REDISTRIBUTABLES, INCLUDING THEIR CONDITION, AVAILABILITY, OR THE EXISTENCE OF ANY LATENT DEFECTS, AND IFTECH SPECIFICALLY DISCLAIMS ALL IMPLIED WARRANTIES OF MERCHANTABILITY, TITLE, NONINFRINGEMENT, SUITABILITY, AND FITNESS FOR ANY PURPOSE. IFTECH DOES NOT WARRANT THAT THE ARAIG® OS, THE IFTECH SOFTWARE OR THE IFTECH REDISTRIBUTABLES WILL BE ERROR-FREE OR THAT THEY WILL WORK WITHOUT INTERRUPTION.
+
+12.	Limitation of Liability.
+
+12.1.	IN NO EVENT WILL IFTECH'S LIABILITY, OR THOSE OF ITS SUPPLIERS, ARISING OUT OF OR RELATED TO THIS AGREEMENT OR TO THE ARAIG® OS EXCEED ONE THOUSAND DOLLARS. EXCEPT FOR INDEMNIFICATION OBLIGATIONS, OR A BREACH OF THE LICENSE RESTRICTIONS OR CONFIDENTIALITY OBLIGATIONS, IN NO EVENT WILL EITHER PARTY HAVE ANY LIABILITY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, HOWEVER CAUSED AND BASED ON ANY THEORY OF LIABILITY, WHETHER FOR BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE, ARISING OUT OF OR RELATED TO THIS AGREEMENT, INCLUDING BUT NOT LIMITED TO LOSS OF ANTICIPATED PROFITS OR BUSINESS INTERRUPTION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS WILL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY. THE PARTIES AGREE THAT THE FOREGOING LIMITATIONS REPRESENT A REASONABLE ALLOCATION OF RISK UNDER THIS AGREEMENT.
+
+13.	Miscellaneous.
+
+13.1.	Assignment. You may not assign this Agreement without the prior written consent of IFTech. Any assignment without such consent is void and of no effect. IFTech may assign this Agreement without your consent in connection with (a) a merger or consolidation of IFTech, (b) a sale or assignment of substantially all its assets, or (c) any other transaction which results in another entity or person owning substantially all of the assets of IFTech. In the event of a permitted assignment, this Agreement will inure to the benefit of and be binding upon the parties and their respective successors and permitted assigns.
+
+13.2.	Waiver; Severability. The failure of a party to enforce any rights under this Agreement will not be deemed a waiver of any rights. The rights and remedies of the parties in this Agreement are not exclusive and are in addition to any other rights and remedies provided by law. If any provision of this Agreement is held by a court of competent jurisdiction to be contrary to law, the remaining provisions of this Agreement will remain in full force and effect.
+
+13.3.	Reservation. All licenses not expressly granted in this Agreement are reserved and no other licenses, immunity or rights, express or implied, are granted by IFTech, by implication, estoppel, or otherwise. The software in the ARAIG® OS is licensed, not sold.
+
+13.4.	Export Restrictions. The software is subject to Canadian export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, End Users, and end use.
+
+13.5.	Governing Law and Jurisdiction. This Agreement will be exclusively governed by and construed under the laws of the Province of Ontario and Canada, without reference to or application of rules governing choice of laws. All disputes arising out of or related to this Agreement will be subject to the exclusive jurisdiction of the provincial and federal courts located in Ontario, Canada and you hereby consent to such jurisdiction. However, IFTech may apply to any court or tribunal worldwide, including but not limited to those having jurisdiction over you or your Authorized Users, to seek injunctive relief.
+
+13.6.	 Relationship of the Parties. This Agreement does not create any agency, partnership, or joint venture relationship between IFTech and you. This Agreement is for the sole benefit of IFTech and you (and indemnified parties), and no other persons will have any right or remedy under this Agreement.
+
+
+13.7.	Notice. The address for notice to IFTech under this Agreement is:
+
+IFTech Inventing Future Technology Inc.
+C/O 1855
+400 Centre Street South
+Whitby, Ontario, Canada L1N 4W2 
+Attention: Executive Manager of Developer Relations
+
+IFTech may provide you notice under this Agreement by email or other electronic communication. You consent to receive such notices in any of the foregoing manners and agree that any such notices by IFTech will satisfy any legal communication requirements.
+
+13.8.	Entire Agreement. This Agreement is the entire understanding of the parties with respect to its subject matter and supersedes any previous or contemporaneous communications, whether oral or written with respect to such subject matter.
+
+Definitions
+
+Whenever capitalized in this Agreement:
+
+“Authorized Users” means your employees and contractors, members of your organization or, if you are an educational institution, your faculty, staff and registered students, who (a) have a demonstrable need to know or use the ARAIG® OS in order to develop and test Applications on your behalf and (b) each have written and binding agreements with you to protect against the unauthorized use and disclosure of the ARAIG® OS consistent with the terms and conditions of this Agreement. Authorized Users do not include End Users.
+
+“End User” means your end user customer(s) or licensee(s).
+
+“IFTech” “We” or “Us” means IFTech Inventing future Technology Inc., an Ontario based corporation with a principal place of business at 400 Centre Street South, Whitby, Ontario, Canada L1N 4W2.
+
+“IFTech Device” means the IFTech product ARAIG®, its derivatives, variations and components. ARAIG® is a multi-sensory wearable device that takes wired and/or wirelessly communicated data to provide sensory feedback (physical and/or auditory) to the wearer.
+
+“IFTech Redistributables” means any .lib code, .dll files, .so files, plugins, sample code, or other materials that We specifically designate in the ARAIG® OS as made available for incorporation into or distribution with Applications. All other  material is considered for all intents and purposes Non-Redistributable Material. The “ARAIG® OS License Agreement.txt” must be included with any distribution Applications.
+
+“IFTech Software” means the IFTech core services application and related applications that interact with an IFTech Device and an operating system to make multi-sensory feedback available to Applications and includes any Updates thereto.
+
+“Non-Redistributable Materials” means the IFTech Software, and any other code, files or materials that are not specifically designated in the ARAIG® OS as made available for incorporation into Applications or that are specifically designated in the ARAIG® OS as not subject to distribution. All material excluding that which is listed as “IFTech Redistributables” is considered for all intents and purposes Non-Redistributable Materials.
+
+“ARAIG® OS” means, collectively, the IFTech Redistributables, tools, APIs, sample code, software, documentation, other materials and any updates to the foregoing that may be provided or made available to you by IFTech in connection with this Agreement, via an IFTech developer portal or otherwise for use in connection with the IFTech development program to develop Applications.
+
+“Updates” means updates, upgrades, modifications, enhancements, revisions, new releases or new versions to the ARAIG® OS that IFTech may make available to you in connection with this Agreement.
+
+Other capitalized terms used in this Agreement have the meaning given them elsewhere in this Agreement.
