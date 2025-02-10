@@ -8799,6 +8799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2084458232}
   agent: {fileID: 1081363922}
+  game: {fileID: 0}
 --- !u!1 &1081714886
 GameObject:
   m_ObjectHideFlags: 0
@@ -9248,7 +9249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 727bd82780d9a6844a83512b8db044d0, type: 2}
+  - {fileID: 2100000, guid: 70056e999c54c7447a822ca6b00cb709, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
