@@ -35,6 +35,6 @@ public class ARAIG_Testing : MonoBehaviour
     {
         int[] l_SensorIDs = new int[] { 5, 18, 20, 25, 27, 32, 33 };
         fn_ARAIG_UpdateMultipleSensorsVibration(l_SensorIDs, l_SensorIDs.Length, 0.5f, 10.0f);
-        fn_ARAIG_UpdateMultipleSensorsVibration(l_SensorIDs, l_SensorIDs.Length, 3.5f, 10.0f);
+        fn_ARAIG_UpdateMultipleSensorsVibration(l_SensorIDs, l_SensorIDs.Length, 0.5f, 10.0f);
     }
 }

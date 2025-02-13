@@ -8,6 +8,7 @@ public class AI : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] GameManager game;
+    int enemyType;
 
     int state;
 
@@ -15,6 +16,15 @@ public class AI : MonoBehaviour
     void Start()
     {
         agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
+    }
+
+    public void Init(int type, Material material, Vector3 startPos)
+    {
+        enemyType = type;
+        GetComponent<MeshRenderer>().material = material;
+        gameObject.SetActive(true);
+        transform.position = startPos;
+        Wander();
     }
 
     // Update is called once per frame
@@ -44,8 +54,8 @@ public class AI : MonoBehaviour
         agent.speed = 2;
         agent.acceleration = 2;
         agent.angularSpeed = 30;
-        if (Mathf.Round(transform.position.x * 10)/10 == Mathf.Round(agent.destination.x * 10) / 10 &&
-            Mathf.Round(transform.position.z * 10) / 10 == Mathf.Round(agent.destination.z * 10) / 10)
+        if (Mathf.Round(transform.position.x * 5) / 5 == Mathf.Round(agent.destination.x * 5) / 5 &&
+            Mathf.Round(transform.position.z * 5) / 5 == Mathf.Round(agent.destination.z * 5) / 5)
         {
             agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         }
