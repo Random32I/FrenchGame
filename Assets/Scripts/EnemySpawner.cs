@@ -39,9 +39,11 @@ public class EnemySpawner : MonoBehaviour
         {
             case 0:
                 material = Gunner;
+                enemies[index].name = "Gunner";
                 break;
             case 1:
                 material = Swords;
+                enemies[index].name = "Melee";
                 break;
         }
 

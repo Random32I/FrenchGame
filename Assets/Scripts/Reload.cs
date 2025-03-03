@@ -24,7 +24,10 @@ public class Reload : MonoBehaviour
         {
             other.gameObject.SetActive(false);
 
-            gun.LoadGun(other.gameObject);
+            if (!gun.fullyLoaded)
+            {
+                gun.LoadGun(other.gameObject);
+            }
         }
     }
 }

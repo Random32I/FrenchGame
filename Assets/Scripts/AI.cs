@@ -54,8 +54,12 @@ public class AI : MonoBehaviour
         agent.speed = 2;
         agent.acceleration = 2;
         agent.angularSpeed = 30;
-        if (Mathf.Round(transform.position.x * 5) / 5 == Mathf.Round(agent.destination.x * 5) / 5 &&
-            Mathf.Round(transform.position.z * 5) / 5 == Mathf.Round(agent.destination.z * 5) / 5)
+        if (Mathf.Abs((transform.position - player.position).magnitude) <= 25)
+        {
+            state = 1;
+        }
+        else if (Mathf.Round(transform.position.x * 5) / 5 == Mathf.Round(agent.destination.x * 5) / 5 &&
+        Mathf.Round(transform.position.z * 5) / 5 == Mathf.Round(agent.destination.z * 5) / 5)
         {
             agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         }
@@ -66,7 +70,20 @@ public class AI : MonoBehaviour
         agent.speed = 8;
         agent.angularSpeed = 120;
         agent.acceleration = 8;
-        agent.stoppingDistance = 5;
+        if (enemyType == 0) agent.stoppingDistance = 5;
+        if (enemyType == 1) agent.stoppingDistance = 1;
+
+
+        if (Mathf.Abs((transform.position - player.position).magnitude) > 25)
+        {
+            state = 0;
+            return;
+        }
+        else if (Mathf.Abs((transform.position - player.position).magnitude) <= agent.stoppingDistance)
+        {
+            state = 2;
+            return;
+        }
         agent.destination = new Vector3(player.position.x * -1, transform.position.y, player.position.z * -1);
     }
 

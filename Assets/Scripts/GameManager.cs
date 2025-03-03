@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] float health;
+    [SerializeField] GameObject[] items;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,12 @@ public class GameManager : MonoBehaviour
     public void DoDamage(float damage)
     {
         health -= damage;
+    }
+
+    public void SpawnItem(int itemID, Vector3 spawnPos)
+    {
+        GameObject newItem = Instantiate(items[itemID]);
+
+        newItem.transform.position = spawnPos;
     }
 }

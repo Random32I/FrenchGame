@@ -46,6 +46,15 @@ public class SliceObject : MonoBehaviour
     {
         if (collision.transform.tag == "Sliceable")
         {
+            if (transform.name == "Gunner")
+            {
+
+            }
+            else if (transform.name == "Melee")
+            {
+
+            }
+
             Slice(collision.gameObject);
         }
     }
