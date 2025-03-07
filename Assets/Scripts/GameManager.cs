@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] float health;
+    [SerializeField] int health = 5;
     [SerializeField] GameObject[] items;
 
     // Start is called before the first frame update
@@ -16,7 +17,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health == 0)
+        {
+            OnDeath();
+        }
     }
 
     public float GetHealth()
@@ -24,9 +28,14 @@ public class GameManager : MonoBehaviour
         return health;
     }
 
-    public void DoDamage(float damage)
+    public void DoDamage(int damage)
     {
         health -= damage;
+    }
+
+    public void Heal()
+    {
+        health++;
     }
 
     public void SpawnItem(int itemID, Vector3 spawnPos)
@@ -34,5 +43,10 @@ public class GameManager : MonoBehaviour
         GameObject newItem = Instantiate(items[itemID]);
 
         newItem.transform.position = spawnPos;
+    }
+
+    void OnDeath()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

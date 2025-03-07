@@ -30,9 +30,14 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
+    public void EnemyKilled(int index)
+    {
+        SpawnEnemy(index);
+    }
+
     public void SpawnEnemy(int index)
     {
-        int type = Random.Range(0, 2);
+        int type = Random.Range(0, 1); //change the 1 back to a 2 to make melee enemies spawn again
         Material material = null;
 
         switch (type)
@@ -47,6 +52,6 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
 
-        enemies[index].Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)));
+        enemies[index].Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index);
     }
 }

@@ -21,11 +21,11 @@ public class Reload : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Bullet" && other.transform.tag != "Shot")
-        {
-            other.gameObject.SetActive(false);
+        { 
 
             if (!gun.fullyLoaded)
             {
+                other.gameObject.SetActive(false);
                 gun.LoadGun(other.gameObject);
             }
         }

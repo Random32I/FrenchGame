@@ -8,9 +8,17 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.name == "HeadCollider")
+        if (transform.tag != "Shot")
         {
-            eat.Play();
+            if (collision.transform.name == "HeadCollider")
+            {
+                eat = collision.transform.GetComponent<AudioSource>();
+                eat.Play();
+                Destroy(gameObject);
+            }
+        }
+        else if (transform.tag == "Shot")
+        {
             Destroy(gameObject);
         }
     }

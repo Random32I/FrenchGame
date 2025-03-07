@@ -8,9 +8,17 @@ public class AI : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] GameManager game;
+    [SerializeField] Rigidbody rig;
+    [SerializeField] EnemySpawner spawner;
+    [SerializeField] AudioSource shoot;
+    [SerializeField] AudioSource PlayerHit;
     int enemyType;
 
     int state;
+
+    int enemyIndex;
+
+    float coolDownTimeStamp;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +26,10 @@ public class AI : MonoBehaviour
         agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
     }
 
-    public void Init(int type, Material material, Vector3 startPos)
+    public void Init(int type, Material material, Vector3 startPos, int index)
     {
         enemyType = type;
+        enemyIndex = index;
         GetComponent<MeshRenderer>().material = material;
         gameObject.SetActive(true);
         transform.position = startPos;
@@ -40,7 +49,15 @@ public class AI : MonoBehaviour
                 Approach();
                 break;
             case 2:
-                Attack();
+                if (enemyType == 0)
+                {
+                    Attack();
+                }
+                else if (Mathf.Abs((transform.position - player.position).magnitude) > agent.stoppingDistance + 1)
+                {
+                    state = 3;
+                    return;
+                }
                 break;
             case 3:
                 Evacuate();
@@ -89,12 +106,70 @@ public class AI : MonoBehaviour
 
     void Attack()
     {
-        game.DoDamage(1);
+        if (Time.timeSinceLevelLoad - coolDownTimeStamp >= 1)
+        {
+            shoot.Play();
+            if (Random.Range(0, 4) == 3)
+            {
+                game.DoDamage(1);
+                PlayerHit.Play();
+            }
+            coolDownTimeStamp = Time.timeSinceLevelLoad;
+        }
     }
 
     void Evacuate()
     {
         //Transform.position.y instead of player.position.y so that the ai isnt trying to path in the y direction
         agent.destination = new Vector3(player.position.x * -1, transform.position.y, player.position.z * -1);
+
+        if (Mathf.Abs((agent.transform.position - player.transform.position).magnitude) >= 35)
+        {
+            state = 0;
+        }
+    }
+
+    void OnDeath(Vector3 impactForce)
+    {
+        rig.constraints = RigidbodyConstraints.None;
+        rig.AddForce(impactForce, ForceMode.Impulse);
+
+        switch (enemyType)
+        {
+            case 0:
+
+                int bullets = Random.Range(2, 5);
+                for (int i = 0; i < bullets; i++)
+                {
+                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                }
+                if (Random.Range(0, 4) == 3)
+                {
+                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                }
+                break;
+            case 1:
+                if (Random.Range(0, 4) == 3)
+                {
+                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                }
+                break;
+        }
+
+        game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f,0.5f),0, Random.Range(-0.5f, 0.5f)));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.name == "Bullet")
+        {
+            OnDeath(collision.transform.GetComponent<Rigidbody>().velocity);
+            state = 4;
+        }
+    }
+
+    private void OnDisable()
+    {
+        spawner.EnemyKilled(enemyIndex);
     }
 }

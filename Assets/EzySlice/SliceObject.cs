@@ -33,12 +33,14 @@ public class SliceObject : MonoBehaviour
             upperHull.AddComponent<Rigidbody>();
             upperHull.AddComponent<MeshCollider>();
             upperHull.GetComponent<MeshCollider>().convex = true;
+            upperHull.AddComponent<SliceDisapear>();
 
             lowerHull.AddComponent<Rigidbody>();
             lowerHull.AddComponent<MeshCollider>();
             lowerHull.GetComponent<MeshCollider>().convex = true;
+            lowerHull.AddComponent<SliceDisapear>();
 
-            Destroy(target);
+            target.SetActive(false);
         }
     }
 
@@ -46,15 +48,6 @@ public class SliceObject : MonoBehaviour
     {
         if (collision.transform.tag == "Sliceable")
         {
-            if (transform.name == "Gunner")
-            {
-
-            }
-            else if (transform.name == "Melee")
-            {
-
-            }
-
             Slice(collision.gameObject);
         }
     }

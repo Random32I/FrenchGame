@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935931293428243359}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.9197793, y: 0.036013722, z: 0.38098505, w: 0.08694481}
+  m_LocalRotation: {x: 0.27059805, y: -0.27059805, z: -0.6532815, w: 0.6532815}
   m_LocalPosition: {x: 0.0106, y: 0, z: 0.0128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6005891766484833619}
-  m_LocalEulerAnglesHint: {x: -169.2, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: -90}
 --- !u!1 &3129764448935517225
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,8 +423,11 @@ MonoBehaviour:
   Fire: {fileID: 8731551404652879453}
   Reload: {fileID: 8332960781142508577}
   fullyLoaded: 0
-  shoot:
-    actionPath: /actions/default/in/MenuButton
+  shoot1:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  shoot2:
+    actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
 --- !u!82 &8731551404652879453
 AudioSource:
