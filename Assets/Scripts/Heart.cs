@@ -21,7 +21,7 @@ public class Heart : MonoBehaviour
 
     public void Heal()
     {
-        if (game.GetHealth() < 5)
+        if (game.GetHealth() < 1000)
         {
             game.Heal();
 

@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int health = 5;
+    [SerializeField] int health = 100;
     [SerializeField] GameObject[] items;
+    [SerializeField] GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     void OnDeath()
     {
+        Destroy(player);
         SceneManager.LoadScene("MainMenu");
     }
 }

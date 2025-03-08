@@ -26,13 +26,16 @@ public class AI : MonoBehaviour
         agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
     }
 
-    public void Init(int type, Material material, Vector3 startPos, int index)
+    public void Init(int type, Material material, Vector3 startPos, int index, EnemySpawner Spawner)
     {
         enemyType = type;
+        //rig.constraints = RigidbodyConstraints.fre; freeze rotations
         enemyIndex = index;
         GetComponent<MeshRenderer>().material = material;
-        gameObject.SetActive(true);
         transform.position = startPos;
+        Debug.Log(transform.position);
+        Debug.Log(startPos);
+        spawner = Spawner;
         Wander();
     }
 
@@ -84,7 +87,7 @@ public class AI : MonoBehaviour
 
     void Approach()
     {
-        agent.speed = 8;
+        agent.speed = 4;
         agent.angularSpeed = 120;
         agent.acceleration = 8;
         if (enemyType == 0) agent.stoppingDistance = 5;
@@ -111,7 +114,7 @@ public class AI : MonoBehaviour
             shoot.Play();
             if (Random.Range(0, 4) == 3)
             {
-                game.DoDamage(1);
+                //game.DoDamage(1);
                 PlayerHit.Play();
             }
             coolDownTimeStamp = Time.timeSinceLevelLoad;
@@ -133,6 +136,7 @@ public class AI : MonoBehaviour
     {
         rig.constraints = RigidbodyConstraints.None;
         rig.AddForce(impactForce, ForceMode.Impulse);
+        spawner.EnemyKilled(enemyIndex);
 
         switch (enemyType)
         {
@@ -168,8 +172,30 @@ public class AI : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    public void Death()
     {
+        switch (enemyType)
+        {
+            case 0:
+
+                int bullets = Random.Range(2, 5);
+                for (int i = 0; i < bullets; i++)
+                {
+                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                }
+                if (Random.Range(0, 4) == 3)
+                {
+                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                }
+                break;
+            case 1:
+                if (Random.Range(0, 4) == 3)
+                {
+                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                }
+                break;
+        }
+        game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
         spawner.EnemyKilled(enemyIndex);
     }
 }

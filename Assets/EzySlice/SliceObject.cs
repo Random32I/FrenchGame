@@ -6,7 +6,7 @@ using EzySlice;
 public class SliceObject : MonoBehaviour
 {
     public Transform planeDebug;
-    public GameObject target;
+   // public GameObject target;
     public Material crossSectionMaterial;
 
     // Start is called before the first frame update
@@ -40,7 +40,8 @@ public class SliceObject : MonoBehaviour
             lowerHull.GetComponent<MeshCollider>().convex = true;
             lowerHull.AddComponent<SliceDisapear>();
 
-            target.SetActive(false);
+            target.GetComponent<AI>().Death();
+            target.transform.position = Vector3.zero;
         }
     }
 
