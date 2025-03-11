@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject instantiableObject;
+    [SerializeField] GameObject enemyPrefab;
 
     [SerializeField] Material Gunner;
     [SerializeField] Material Swords;
-
-    AI[] enemies = new AI[30];
 
     int totalActiveEnemies;
 
@@ -18,7 +16,6 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < 30; i++)
         {
-            enemies[i] = Instantiate(instantiableObject).GetComponent<AI>();
             totalActiveEnemies++;
             SpawnEnemy(i);
         }
@@ -39,21 +36,21 @@ public class EnemySpawner : MonoBehaviour
     {
         int type = Random.Range(0, 1); //change the 1 back to a 2 to make melee enemies spawn again
         Material material = null;
-        
+
+        GameObject newEnemy = Instantiate(enemyPrefab);
 
         switch (type)
         {
             case 0:
                 material = Gunner;
-                enemies[index].name = "Gunner";
+                newEnemy.name = "Gunner";
                 break;
             case 1:
                 material = Swords;
-                enemies[index].name = "Melee";
+                newEnemy.name = "Melee";
                 break;
         }
-        enemies[index].gameObject.SetActive(true);
-
-        enemies[index].Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index, this);
+        newEnemy.SetActive(true);
+        newEnemy.GetComponent<AI>().Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index, this);
     }
 }

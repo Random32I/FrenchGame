@@ -42,6 +42,7 @@ public class Flintlock : MonoBehaviour
                 bullets[bulletCount].SetActive(true);
                 bullets[bulletCount].transform.position = transform.position + new Vector3(-0.10940001849f, 0.14177140732f, 0.0196000002f);
                 bullets[bulletCount].transform.tag = "Shot";
+                bullets[bulletCount].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 bullets[bulletCount].GetComponent<Rigidbody>().AddForce((transform.right ) * -unmodifiedForce, ForceMode.VelocityChange);
                 bullets[bulletCount] = null;
                 fullyLoaded = false;

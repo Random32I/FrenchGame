@@ -14,7 +14,7 @@ public class AI : MonoBehaviour
     [SerializeField] AudioSource PlayerHit;
     int enemyType;
 
-    int state;
+    [SerializeField] int state;
 
     int enemyIndex;
 
@@ -33,8 +33,6 @@ public class AI : MonoBehaviour
         enemyIndex = index;
         GetComponent<MeshRenderer>().material = material;
         transform.position = startPos;
-        Debug.Log(transform.position);
-        Debug.Log(startPos);
         spawner = Spawner;
         Wander();
     }
@@ -74,12 +72,12 @@ public class AI : MonoBehaviour
         agent.speed = 2;
         agent.acceleration = 2;
         agent.angularSpeed = 30;
-        if (Mathf.Abs((transform.position - player.position).magnitude) <= 25)
+        if (Mathf.Abs((transform.position - player.position).magnitude) <= 10)
         {
             state = 1;
         }
         else if (Mathf.Round(transform.position.x * 5) / 5 == Mathf.Round(agent.destination.x * 5) / 5 &&
-        Mathf.Round(transform.position.z * 5) / 5 == Mathf.Round(agent.destination.z * 5) / 5)
+        Mathf.Round(transform.position.z) == Mathf.Round(agent.destination.z))
         {
             agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         }
@@ -87,9 +85,9 @@ public class AI : MonoBehaviour
 
     void Approach()
     {
-        agent.speed = 4;
-        agent.angularSpeed = 120;
-        agent.acceleration = 8;
+        agent.speed = 3;
+        agent.angularSpeed = 50;
+        agent.acceleration = 3;
         if (enemyType == 0) agent.stoppingDistance = 5;
         if (enemyType == 1) agent.stoppingDistance = 1;
 
@@ -174,6 +172,7 @@ public class AI : MonoBehaviour
 
     public void Death()
     {
+        state = -1;
         switch (enemyType)
         {
             case 0:

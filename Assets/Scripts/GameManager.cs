@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject newItem = Instantiate(items[itemID]);
 
-        newItem.transform.position = spawnPos;
+        newItem.transform.position = new Vector3(spawnPos.x, 1, spawnPos.z);
     }
 
     void OnDeath()
