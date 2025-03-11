@@ -265,12 +265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866868139192857348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616e44ea9784cb54ba13f57a52cba450, type: 3}
+  m_Script: {fileID: 11500000, guid: 64e5213037c1b914d91df66d107498d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planeDebug: {fileID: 8581198844214230073}
-  crossSectionMaterial: {fileID: 2100000, guid: b0d16b2246ec62b45bc68cee002ac195,
-    type: 2}
+  vfx: {fileID: 0}
+  angularVelocityThreshold: 6.5
 --- !u!64 &3249362056721062057
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -490,10 +489,10 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 0.09119508, y: 3.8216743, z: 0.12880558}
+      - m_Value: {x: -0.16556019, y: 3.82015, z: 0}
         m_Name: PosA
         m_Overridden: 1
-      - m_Value: {x: 0.06009902, y: 3.9743674, z: 0.15553656}
+      - m_Value: {x: -0.2423123, y: 3.9583735, z: 0}
         m_Name: PosB
         m_Overridden: 1
     m_Vector4f:
