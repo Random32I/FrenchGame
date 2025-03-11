@@ -163,10 +163,13 @@ public class AI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.name == "Bullet")
+        if (collision.transform.name.Contains("Bullet") && collision.transform.tag != "Shot")
         {
-            OnDeath(collision.transform.GetComponent<Rigidbody>().velocity);
-            state = 4;
+            gameObject.AddComponent<SliceDisapear>();
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.layer = 8;
+            rig.AddForce(collision.relativeVelocity, ForceMode.Impulse);
+            Death();
         }
     }
 

@@ -20,7 +20,7 @@ public class Reload : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Bullet" && other.transform.tag != "Shot")
+        if (other.name.Contains("Bullet") && other.transform.tag != "Shot")
         { 
 
             if (!gun.fullyLoaded)
