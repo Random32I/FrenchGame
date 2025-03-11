@@ -7,7 +7,7 @@ public class SliceObject : CutterBehaviour
 {
     public Transform planeDebug;
     // public GameObject target;
-    public Material crossSectionMaterial;
+    //public Material crossSectionMaterial;
 
     private void Cut(GameObject target)
     {
