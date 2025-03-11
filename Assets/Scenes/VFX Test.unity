@@ -617,11 +617,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
         type: 3}
-      propertyPath: lengthInSec
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
-        type: 3}
       propertyPath: ShapeModule.m_Scale.x
       value: 100
       objectReference: {fileID: 0}
@@ -852,11 +847,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
         type: 3}
-      propertyPath: lengthInSec
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
-        type: 3}
       propertyPath: ShapeModule.m_Scale.x
       value: 100
       objectReference: {fileID: 0}
@@ -947,11 +937,6 @@ PrefabInstance:
         type: 3}
       propertyPath: prewarm
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
         type: 3}
@@ -1113,11 +1098,6 @@ PrefabInstance:
         type: 3}
       propertyPath: prewarm
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3437451790252526929, guid: fbafbebff05ff6b4b834b58249825093,
         type: 3}
