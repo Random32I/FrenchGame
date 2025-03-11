@@ -232,11 +232,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f776a22ef4a9c6f46b0025a186634b13,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4928710275106903178}
+      addedObject: {fileID: 7736764655282486829}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f776a22ef4a9c6f46b0025a186634b13,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7736764655282486829}
+      addedObject: {fileID: 3273644281058010299}
   m_SourcePrefab: {fileID: 100100000, guid: f776a22ef4a9c6f46b0025a186634b13, type: 3}
 --- !u!4 &1356570152996640247 stripped
 Transform:
@@ -383,22 +383,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &4928710275106903178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844314144966397773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616e44ea9784cb54ba13f57a52cba450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planeDebug: {fileID: 3276653612320397581}
-  target: {fileID: 0}
-  crossSectionMaterial: {fileID: 2100000, guid: b0d16b2246ec62b45bc68cee002ac195,
-    type: 2}
 --- !u!64 &7736764655282486829
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -421,3 +405,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: f776a22ef4a9c6f46b0025a186634b13, type: 3}
+--- !u!114 &3273644281058010299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844314144966397773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19710bcf8c6e22a4ab8527e67ce9d18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Separation: 0.02
+  DestroyTargets: 1
+  UseAsync: 1
+  AsyncThreadAmount: -1
+  VertexCreationThreshold: 0
+  DefaultMaterial: {fileID: 0}
+  planeDebug: {fileID: 0}
+  crossSectionMaterial: {fileID: 0}
