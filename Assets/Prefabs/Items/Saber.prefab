@@ -422,6 +422,5 @@ MonoBehaviour:
   UseAsync: 1
   AsyncThreadAmount: -1
   VertexCreationThreshold: 0
-  DefaultMaterial: {fileID: 0}
-  planeDebug: {fileID: 0}
-  crossSectionMaterial: {fileID: 0}
+  DefaultMaterial: {fileID: 2100000, guid: 8f32b3d74401443479c643e48c21915a, type: 2}
+  planeDebug: {fileID: 3276653612320397581}

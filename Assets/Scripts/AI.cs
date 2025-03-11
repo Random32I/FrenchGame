@@ -74,7 +74,7 @@ public class AI : MonoBehaviour
         agent.speed = 2;
         agent.acceleration = 2;
         agent.angularSpeed = 30;
-        if (Mathf.Abs((transform.position - player.position).magnitude) <= 25)
+        if (Mathf.Abs((transform.position - player.position).magnitude) <= 10)
         {
             state = 1;
         }
@@ -87,9 +87,9 @@ public class AI : MonoBehaviour
 
     void Approach()
     {
-        agent.speed = 4;
-        agent.angularSpeed = 120;
-        agent.acceleration = 8;
+        agent.speed = 3;
+        agent.angularSpeed = 50;
+        agent.acceleration = 3;
         if (enemyType == 0) agent.stoppingDistance = 5;
         if (enemyType == 1) agent.stoppingDistance = 1;
 
@@ -145,17 +145,17 @@ public class AI : MonoBehaviour
                 int bullets = Random.Range(2, 5);
                 for (int i = 0; i < bullets; i++)
                 {
-                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(0f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
                 if (Random.Range(0, 4) == 3)
                 {
-                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(0f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
                 break;
             case 1:
                 if (Random.Range(0, 4) == 3)
                 {
-                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(0f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
                 break;
         }

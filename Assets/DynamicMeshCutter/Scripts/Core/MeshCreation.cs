@@ -184,6 +184,10 @@ namespace DynamicMeshCutter
             parent.transform.position = worldCenter;
 
             root.transform.SetParent(parent, true);
+
+            //ADDED BY ME
+            parent.gameObject.AddComponent<SliceDisapear>();
+
             //root.transform.localScale = target.transform.localScale; //test this
 
             if (target.CreateRigidbody[bt])
