@@ -9,7 +9,7 @@ public class SliceObject : CutterBehaviour
 
     private void Cut(GameObject target)
     {
-        Plane plane = new Plane(planeDebug.position, planeDebug.up);
+        Plane plane = new Plane(planeDebug.up, planeDebug.position);
         Cut(target.GetComponent<MeshTarget>(), transform.position, plane.normal, null, OnCreated);
     }
     void OnCreated(Info info, MeshCreationData cData)
@@ -21,8 +21,8 @@ public class SliceObject : CutterBehaviour
     {
         if (collision.transform.tag == "Sliceable")
         {
-            collision.gameObject.GetComponent<AI>().Death();
             Cut(collision.gameObject);
+            collision.gameObject.GetComponent<AI>().Death();
         }
     }
 }

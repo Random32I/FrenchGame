@@ -14,7 +14,7 @@ public class AI : MonoBehaviour
     [SerializeField] AudioSource PlayerHit;
     int enemyType;
 
-    int state;
+    [SerializeField] int state;
 
     int enemyIndex;
 
@@ -33,8 +33,6 @@ public class AI : MonoBehaviour
         enemyIndex = index;
         GetComponent<MeshRenderer>().material = material;
         transform.position = startPos;
-        Debug.Log(transform.position);
-        Debug.Log(startPos);
         spawner = Spawner;
         Wander();
     }
@@ -79,7 +77,7 @@ public class AI : MonoBehaviour
             state = 1;
         }
         else if (Mathf.Round(transform.position.x * 5) / 5 == Mathf.Round(agent.destination.x * 5) / 5 &&
-        Mathf.Round(transform.position.z * 5) / 5 == Mathf.Round(agent.destination.z * 5) / 5)
+        Mathf.Round(transform.position.z) == Mathf.Round(agent.destination.z))
         {
             agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         }
@@ -145,17 +143,17 @@ public class AI : MonoBehaviour
                 int bullets = Random.Range(2, 5);
                 for (int i = 0; i < bullets; i++)
                 {
-                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(0f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
                 if (Random.Range(0, 4) == 3)
                 {
-                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(0f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
                 break;
             case 1:
                 if (Random.Range(0, 4) == 3)
                 {
-                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(0f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
                 break;
         }
@@ -174,6 +172,7 @@ public class AI : MonoBehaviour
 
     public void Death()
     {
+        state = -1;
         switch (enemyType)
         {
             case 0:
