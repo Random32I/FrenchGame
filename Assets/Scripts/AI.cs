@@ -107,7 +107,7 @@ public class AI : MonoBehaviour
 
     void Attack()
     {
-        if (Time.timeSinceLevelLoad - coolDownTimeStamp >= 1)
+        if (Time.timeSinceLevelLoad - coolDownTimeStamp >= 4)
         {
             shoot.Play();
             if (Random.Range(0, 4) == 3)

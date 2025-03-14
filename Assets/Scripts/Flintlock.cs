@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using Valve.VR;
 
 public class Flintlock : MonoBehaviour
@@ -12,6 +13,7 @@ public class Flintlock : MonoBehaviour
     [SerializeField] Transform Angle;
     [SerializeField] AudioSource Fire;
     [SerializeField] AudioSource Reload;
+    [SerializeField] VisualEffect vfx; // Assigns VFX component
     bool fired;
     public bool fullyLoaded;
     int bulletCount;
@@ -48,6 +50,8 @@ public class Flintlock : MonoBehaviour
                 fullyLoaded = false;
                 loaded = bullets[0] != null;
                 Fire.Play();
+                vfx.Play();
+
                 isShot = true;
             }
             if (!shootAction.state)

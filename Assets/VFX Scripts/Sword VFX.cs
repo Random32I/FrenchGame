@@ -16,6 +16,8 @@ public class SwordVFX : MonoBehaviour
 
     private Rigidbody body;
 
+    Vector3 prevPos = Vector3.zero;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -27,7 +29,18 @@ public class SwordVFX : MonoBehaviour
 
     void Update()
     {
-        float angularVelocity = body.angularVelocity.magnitude;
+
+        float angularVelocity;
+
+        if (transform.parent)
+        {
+            angularVelocity = Mathf.Abs((transform.parent.position - prevPos).magnitude);
+            prevPos = transform.parent.position;
+        }
+        else
+        {
+            angularVelocity = 0;
+        }
 
         if (body != null && vfx != null)
         {
@@ -38,7 +51,6 @@ public class SwordVFX : MonoBehaviour
         // Only log every debugInterval seconds
         if (Time.time >= logTime)
         {
-            Debug.Log($"Angular Velocity: {angularVelocity}");
             logTime = Time.time + interval;
         }
     }

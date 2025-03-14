@@ -21,6 +21,7 @@ public class SliceObject : CutterBehaviour
     {
         if (collision.transform.tag == "Sliceable")
         {
+            collision.transform.tag = "Untagged";
             Cut(collision.gameObject);
             collision.gameObject.GetComponent<AI>().Death();
         }
