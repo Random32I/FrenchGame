@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentFlags: 108
-  attachmentOffset: {fileID: 8130344787388675410}
+  attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
@@ -419,9 +419,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Angle: {fileID: 8130344787388675410}
+  Angle: {fileID: 0}
   Fire: {fileID: 8731551404652879453}
   Reload: {fileID: 8332960781142508577}
+  vfx: {fileID: 0}
   fullyLoaded: 0
   shoot1:
     actionPath: /actions/default/in/GrabPinch

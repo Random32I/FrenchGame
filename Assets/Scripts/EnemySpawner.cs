@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] EnemySpawner OtherSpawner;
 
     [SerializeField] Material Gunner;
     [SerializeField] Material Swords;
@@ -14,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 5; i++)
         {
             totalActiveEnemies++;
             SpawnEnemy(i);
@@ -51,6 +52,6 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         newEnemy.SetActive(true);
-        newEnemy.GetComponent<AI>().Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index, this);
+        newEnemy.GetComponent<AI>().Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index, OtherSpawner);
     }
 }

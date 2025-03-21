@@ -31,8 +31,9 @@ public class AI : MonoBehaviour
         enemyType = type;
         //rig.constraints = RigidbodyConstraints.fre; freeze rotations
         enemyIndex = index;
-        GetComponent<MeshRenderer>().material = material;
+        //GetComponent<MeshRenderer>().material = material;
         transform.position = startPos;
+        transform.tag = "Sliceable";
         spawner = Spawner;
         Wander();
     }
@@ -71,7 +72,6 @@ public class AI : MonoBehaviour
         agent.stoppingDistance = 0;
         agent.speed = 2;
         agent.acceleration = 2;
-        agent.angularSpeed = 30;
         if (Mathf.Abs((transform.position - player.position).magnitude) <= 10)
         {
             state = 1;
@@ -86,7 +86,6 @@ public class AI : MonoBehaviour
     void Approach()
     {
         agent.speed = 3;
-        agent.angularSpeed = 50;
         agent.acceleration = 3;
         if (enemyType == 0) agent.stoppingDistance = 5;
         if (enemyType == 1) agent.stoppingDistance = 1;
@@ -197,7 +196,7 @@ public class AI : MonoBehaviour
                 }
                 break;
         }
-        game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+        //game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
         spawner.EnemyKilled(enemyIndex);
     }
 }
