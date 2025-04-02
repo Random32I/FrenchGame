@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] EnemySpawner[] OtherSpawners = new EnemySpawner[3];
+    [SerializeField] AudioClip[] AttackSounds;
 
     [SerializeField] Material Gunner;
     [SerializeField] Material Swords;
@@ -35,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy(int index)
     {
-        int type = Random.Range(0, 1); //change the 1 back to a 2 to make melee enemies spawn again
+        int type = Random.Range(0, 2); //change the 1 back to a 2 to make melee enemies spawn again
         int spawner = Random.Range(0, 3);
         float agroDelay = Random.Range(0.5f, 3f);
         float agroDistance = Random.Range(7f, 13f);
@@ -55,6 +56,6 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         newEnemy.SetActive(true);
-        newEnemy.GetComponent<AI>().Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index, OtherSpawners[spawner], agroDelay, agroDistance);
+        newEnemy.GetComponent<AI>().Init(type, material, transform.position + new Vector3 (Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), index, OtherSpawners[spawner], agroDelay, agroDistance, AttackSounds[type]);
     }
 }

@@ -18,6 +18,9 @@ public class SwordVFX : MonoBehaviour
 
     Vector3 prevPos = Vector3.zero;
 
+    [SerializeField] AudioSource swordWoosh;
+    bool audioPlayed = false;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -46,6 +49,15 @@ public class SwordVFX : MonoBehaviour
         {
             bool vfxActive = angularVelocity > angularVelocityThreshold;
             vfx.enabled = vfxActive;
+            if (vfxActive && !audioPlayed)
+            {
+                swordWoosh.Play();
+                audioPlayed = true;
+            }
+            else if (!vfxActive)
+            {
+                audioPlayed = false;
+            }
         }
 
         // Only log every debugInterval seconds

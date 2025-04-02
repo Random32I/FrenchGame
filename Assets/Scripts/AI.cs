@@ -14,6 +14,9 @@ public class AI : MonoBehaviour
     [SerializeField] AudioSource PlayerHit;
     int enemyType;
 
+    [SerializeField] Rigidbody[] ragdoll;
+    [SerializeField] GameObject[] Weapons;
+
     [SerializeField] int state;
 
     int enemyIndex;
@@ -25,13 +28,16 @@ public class AI : MonoBehaviour
 
     float coolDownTimeStamp;
 
+    //Animations
+    [SerializeField] Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
     }
 
-    public void Init(int type, Material material, Vector3 startPos, int index, EnemySpawner Spawner, float agroDelay, float agroDistance)
+    public void Init(int type, Material material, Vector3 startPos, int index, EnemySpawner Spawner, float agroDelay, float agroDistance, AudioClip attackSound)
     {
         enemyType = type;
         //rig.constraints = RigidbodyConstraints.fre; freeze rotations
@@ -42,6 +48,9 @@ public class AI : MonoBehaviour
         spawner = Spawner;
         delayToAgro = agroDelay;
         distanceToAgro = agroDistance;
+        shoot.clip = attackSound;
+        anim.SetBool("Gunner", type == 0);
+        Weapons[type].SetActive(true);
         Wander();
     }
 
@@ -133,6 +142,9 @@ public class AI : MonoBehaviour
 
     void Attack()
     {
+        anim.SetBool("IsAttacking", true);
+        anim.SetInteger("RandomAnim", Random.Range(0,2));
+
         if (Time.timeSinceLevelLoad - coolDownTimeStamp >= 4)
         {
             shoot.Play();
@@ -223,7 +235,16 @@ public class AI : MonoBehaviour
                 }
                 break;
         }
-        //game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+        game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+        Ragdoll();
         spawner.EnemyKilled(enemyIndex);
+    }
+
+    public void Ragdoll()
+    {
+        foreach (Rigidbody joint in ragdoll)
+        {
+            joint.isKinematic = false;
+        }
     }
 }

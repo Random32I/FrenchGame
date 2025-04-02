@@ -7,6 +7,9 @@ public class SliceObject : CutterBehaviour
 {
     public Transform planeDebug;
 
+    [SerializeField] AudioClip[] Slice;
+    [SerializeField] AudioSource sliceSound;
+
     private void Cut(GameObject target)
     {
         Plane plane = new Plane(planeDebug.up, planeDebug.position);
@@ -21,6 +24,8 @@ public class SliceObject : CutterBehaviour
     {
         if (collision.transform.tag == "Sliceable")
         {
+            sliceSound.clip = Slice[Random.Range(0, 2)];
+            sliceSound.Play();
             collision.transform.tag = "Untagged";
             Cut(collision.gameObject);
             collision.gameObject.GetComponent<AI>().Death();

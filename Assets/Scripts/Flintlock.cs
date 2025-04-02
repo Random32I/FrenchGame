@@ -11,12 +11,12 @@ public class Flintlock : MonoBehaviour
     [SerializeField] float unmodifiedForce = 20;
     [SerializeField] GameObject[] bullets = new GameObject[5];
     [SerializeField] Transform Angle;
-    [SerializeField] AudioSource Fire;
-    [SerializeField] AudioSource Reload;
     [SerializeField] VisualEffect vfx; // Assigns VFX component
     bool fired;
     public bool fullyLoaded;
     int bulletCount;
+
+    public static Flintlock instance;
 
     bool isShot;
 
@@ -27,10 +27,24 @@ public class Flintlock : MonoBehaviour
     [SerializeField] SteamVR_Action_Boolean shoot2;
     SteamVR_Action_Boolean shootAction;
 
+    //Audio stuff
+    [SerializeField] AudioSource Fire;
+    [SerializeField] AudioSource Reload;
+    [SerializeField] AudioClip LoadedFire;
+    [SerializeField] AudioClip[] EmptyFire;
+
     // Start is called before the first frame update
     void Start()
     {
         shootAction = shoot1;
+        if (instance != null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +52,7 @@ public class Flintlock : MonoBehaviour
     {
         if (transform.parent)
         {
+            //shot and loaded
             if (shootAction.state && shootAction.activeDevice.ToString().Equals(transform.parent.name) && loaded && !isShot)
             {
                 bulletCount--;
@@ -49,9 +64,17 @@ public class Flintlock : MonoBehaviour
                 bullets[bulletCount] = null;
                 fullyLoaded = false;
                 loaded = bullets[0] != null;
+                Fire.clip = LoadedFire;
                 Fire.Play();
                 vfx.Play();
 
+                isShot = true;
+            }
+            //shot and unloaded
+            else if (shootAction.state && shootAction.activeDevice.ToString().Equals(transform.parent.name) && !loaded && !isShot)
+            {
+                Fire.clip = EmptyFire[Random.Range(0,3)];
+                Fire.Play();
                 isShot = true;
             }
             if (!shootAction.state)
