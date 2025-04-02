@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 7303462400168716854}
   - component: {fileID: 2074776154753788764}
   - component: {fileID: 3533222697862979743}
+  - component: {fileID: 3079850415111168392}
   m_Layer: 0
   m_Name: Match
   m_TagString: Untagged
@@ -386,6 +387,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3079850415111168392}
+        m_TargetAssemblyTypeName: ItemRemoval, Assembly-CSharp
+        m_MethodName: Grab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls:
@@ -401,7 +414,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 3079850415111168392}
+        m_TargetAssemblyTypeName: ItemRemoval, Assembly-CSharp
+        m_MethodName: Release
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &3079850415111168392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215027764535174880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0948a0f32f4b44046a7393844ae22743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

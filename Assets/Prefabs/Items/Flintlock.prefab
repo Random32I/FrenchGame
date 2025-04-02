@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8130344787388675410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hand Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 415171176242130105}
   - component: {fileID: 2845636135434798297}
   - component: {fileID: 1590969881371653554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Reload Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,89 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 3030820554754660108}
+--- !u!1 &6560827760189095051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2470378789027576193}
+  - component: {fileID: 4244390919847512894}
+  - component: {fileID: 3398649458683600952}
+  m_Layer: 10
+  m_Name: Reticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2470378789027576193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560827760189095051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.045, y: 0, z: 0.018}
+  m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6005891766484833619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!33 &4244390919847512894
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560827760189095051}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3398649458683600952
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560827760189095051}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8137406163087801689
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +227,9 @@ GameObject:
   - component: {fileID: 3030820554754660108}
   - component: {fileID: 8731551404652879453}
   - component: {fileID: 8332960781142508577}
-  m_Layer: 0
+  - component: {fileID: 3988014267471217260}
+  - component: {fileID: 8743316923085685882}
+  m_Layer: 10
   m_Name: Flintlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +252,7 @@ Transform:
   - {fileID: 8537749873233923940}
   - {fileID: 1880212068675526387}
   - {fileID: 8130344787388675410}
+  - {fileID: 2470378789027576193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3046719846230321515
@@ -381,12 +467,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3988014267471217260}
+        m_TargetAssemblyTypeName: ItemRemoval, Assembly-CSharp
+        m_MethodName: Grab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3030820554754660108}
         m_TargetAssemblyTypeName: Flintlock, Assembly-CSharp
         m_MethodName: Dropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3988014267471217260}
+        m_TargetAssemblyTypeName: ItemRemoval, Assembly-CSharp
+        m_MethodName: Release
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -622,6 +732,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3988014267471217260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137406163087801689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0948a0f32f4b44046a7393844ae22743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8743316923085685882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137406163087801689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff7521e23c105a4ea5273102ad911bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultLength: 10
+  reticle: {fileID: 6560827760189095051}
 --- !u!1001 &2133971300135467288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,6 +840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42a975ca7385bdb49b1218c608c1a115,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 42a975ca7385bdb49b1218c608c1a115,
         type: 3}

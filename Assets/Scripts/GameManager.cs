@@ -5,14 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int health = 100;
+    [SerializeField] float health = 100;
     [SerializeField] GameObject[] items;
     [SerializeField] GameObject player;
+
+    public bool inHealingZone;
+
+    public static bool isSeatedMode;
+    public bool isEnviornmentCorrectSize = false;
+
+    [SerializeField] float SeatedScale;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (isSeatedMode)
+        {
+            player.transform.localScale = Vector3.one * SeatedScale;
+            isEnviornmentCorrectSize = true;
+        }
     }
 
     // Update is called once per frame
@@ -21,6 +32,16 @@ public class GameManager : MonoBehaviour
         if (health == 0)
         {
             OnDeath();
+        }
+        if (inHealingZone)
+        {
+            Heal(0.05f);
+        }
+
+        if (isSeatedMode && !isEnviornmentCorrectSize)
+        {
+            player.transform.localScale = Vector3.one * SeatedScale;
+            isEnviornmentCorrectSize = true;
         }
     }
 
@@ -34,9 +55,9 @@ public class GameManager : MonoBehaviour
         health -= damage;
     }
 
-    public void Heal()
+    public void Heal(float amount)
     {
-        health++;
+        health += amount;
     }
 
     public void SpawnItem(int itemID, Vector3 spawnPos)

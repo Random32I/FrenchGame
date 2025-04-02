@@ -19,11 +19,19 @@ public class Heart : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.name.Contains("Hand"))
+        {
+            Heal();
+        }
+    }
+
     public void Heal()
     {
         if (game.GetHealth() < 1000)
         {
-            game.Heal();
+            game.Heal(5);
 
             Destroy(gameObject);
         }

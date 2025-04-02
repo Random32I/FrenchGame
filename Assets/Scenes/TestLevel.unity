@@ -4315,6 +4315,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 0}
+  OtherSpawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Gunner: {fileID: 2100000, guid: 9ce737041a843a74f825d6288e0b34e3, type: 2}
   Swords: {fileID: 2100000, guid: ef30834a9d754c244921282542e09fad, type: 2}
 --- !u!4 &580467822
@@ -5101,6 +5105,10 @@ PrefabInstance:
     - target: {fileID: 11479906, guid: 73ac470d3d909d645a6c89a4664b6849, type: 3}
       propertyPath: title
       value: Gun Range
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493574, guid: 73ac470d3d909d645a6c89a4664b6849, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19467,6 +19475,16 @@ PrefabInstance:
       propertyPath: m_IncludeLayers.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 492489794943641924, guid: 1619e9c6744e2ee4f9dc0be0524734df,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 846383739584706175, guid: 1619e9c6744e2ee4f9dc0be0524734df,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1726515004604139955, guid: 1619e9c6744e2ee4f9dc0be0524734df,
         type: 3}
       propertyPath: attachEaseIn
@@ -19482,6 +19500,11 @@ PrefabInstance:
       propertyPath: m_IncludeLayers.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 3988014267471217260, guid: 1619e9c6744e2ee4f9dc0be0524734df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6005891766484833619, guid: 1619e9c6744e2ee4f9dc0be0524734df,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19495,6 +19518,11 @@ PrefabInstance:
     - target: {fileID: 6005891766484833619, guid: 1619e9c6744e2ee4f9dc0be0524734df,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560827760189095051, guid: 1619e9c6744e2ee4f9dc0be0524734df,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8130344787388675410, guid: 1619e9c6744e2ee4f9dc0be0524734df,
@@ -19517,7 +19545,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flintlock
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 492489794943641924, guid: 1619e9c6744e2ee4f9dc0be0524734df, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

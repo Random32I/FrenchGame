@@ -18,6 +18,11 @@ public class AI : MonoBehaviour
 
     int enemyIndex;
 
+    float delayToAgro;
+    float distanceToAgro;
+    float agroTimeStamp;
+    bool onAgroTimer;
+
     float coolDownTimeStamp;
 
     // Start is called before the first frame update
@@ -26,7 +31,7 @@ public class AI : MonoBehaviour
         agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
     }
 
-    public void Init(int type, Material material, Vector3 startPos, int index, EnemySpawner Spawner)
+    public void Init(int type, Material material, Vector3 startPos, int index, EnemySpawner Spawner, float agroDelay, float agroDistance)
     {
         enemyType = type;
         //rig.constraints = RigidbodyConstraints.fre; freeze rotations
@@ -35,6 +40,8 @@ public class AI : MonoBehaviour
         transform.position = startPos;
         transform.tag = "Sliceable";
         spawner = Spawner;
+        delayToAgro = agroDelay;
+        distanceToAgro = agroDistance;
         Wander();
     }
 
@@ -49,6 +56,11 @@ public class AI : MonoBehaviour
                 break;
             case 1:
                 Approach();
+                if (game.inHealingZone)
+                {
+                    state = 3;
+                    return;
+                }
                 break;
             case 2:
                 if (enemyType == 0)
@@ -56,6 +68,11 @@ public class AI : MonoBehaviour
                     Attack();
                 }
                 else if (Mathf.Abs((transform.position - player.position).magnitude) > agent.stoppingDistance + 1)
+                {
+                    state = 3;
+                    return;
+                }
+                if (game.inHealingZone)
                 {
                     state = 3;
                     return;
@@ -72,14 +89,24 @@ public class AI : MonoBehaviour
         agent.stoppingDistance = 0;
         agent.speed = 2;
         agent.acceleration = 2;
-        if (Mathf.Abs((transform.position - player.position).magnitude) <= 10)
+        if (Mathf.Abs((transform.position - player.position).magnitude) <= distanceToAgro)
         {
-            state = 1;
+            if (!onAgroTimer)
+            {
+                agroTimeStamp = Time.timeSinceLevelLoad;
+                onAgroTimer = true;
+            }
+            if (Time.timeSinceLevelLoad - agroTimeStamp >= delayToAgro)
+            {
+                state = 1;
+                onAgroTimer = false;
+            }
         }
         else if (Mathf.Round(transform.position.x * 5) / 5 == Mathf.Round(agent.destination.x * 5) / 5 &&
         Mathf.Round(transform.position.z) == Mathf.Round(agent.destination.z))
         {
             agent.destination = transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
+            onAgroTimer = false;
         }
     }
 
@@ -91,7 +118,7 @@ public class AI : MonoBehaviour
         if (enemyType == 1) agent.stoppingDistance = 1;
 
 
-        if (Mathf.Abs((transform.position - player.position).magnitude) > 25)
+        if (Mathf.Abs((transform.position - player.position).magnitude) > distanceToAgro + 5)
         {
             state = 0;
             return;
@@ -162,12 +189,12 @@ public class AI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.name.Contains("Bullet") && collision.transform.tag != "Shot")
+        if ((collision.transform.name.Contains("Bullet") && collision.transform.tag != "Shot") || collision.transform.name.Contains("Hand"))
         {
             gameObject.AddComponent<SliceDisapear>();
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.layer = 8;
-            rig.AddForce(collision.relativeVelocity, ForceMode.Impulse);
+            //rig.AddForce(collision.relativeVelocity, ForceMode.Impulse);
             Death();
         }
     }
