@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,13 +9,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] float health = 100;
     [SerializeField] GameObject[] items;
     [SerializeField] GameObject player;
+    [SerializeField] TextMeshProUGUI healthText;
 
     public bool inHealingZone;
+
+    [SerializeField] AudioSource[] audioSources;
+
+    public static float Volume;
+    bool isVolumeSet = false;
 
     public static bool isSeatedMode;
     public bool isEnviornmentCorrectSize = false;
 
     [SerializeField] float SeatedScale;
+
+    public bool deathTimerStarted = false;
+    float deathTimeStamp;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +39,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (healthText)
+        {
+            healthText.text = $"{health}";
+        }
         if (health == 0)
         {
             OnDeath();
@@ -43,6 +57,31 @@ public class GameManager : MonoBehaviour
             player.transform.localScale = Vector3.one * SeatedScale;
             isEnviornmentCorrectSize = true;
         }
+
+        if (!isVolumeSet)
+        {
+            foreach(AudioSource source in audioSources)
+            {
+                source.volume = Volume;
+            }
+            isVolumeSet = true;
+        }
+
+        if (deathTimerStarted && Time.timeSinceLevelLoad - deathTimeStamp >= 5)
+        {
+            Destroy(player);
+            SceneManager.LoadScene("Test2");
+        }
+    }
+
+    public void SetSeatedPlay(bool state)
+    {
+        isSeatedMode = state;
+    }
+
+    public void SetVolume(float amount)
+    {
+        Volume = amount;
     }
 
     public float GetHealth()
@@ -69,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     void OnDeath()
     {
-        Destroy(player);
-        SceneManager.LoadScene("MainMenu");
+        deathTimerStarted = true;
+        deathTimeStamp = Time.timeSinceLevelLoad;
     }
 }

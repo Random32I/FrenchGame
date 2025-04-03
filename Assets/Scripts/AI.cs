@@ -57,6 +57,10 @@ public class AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (game.deathTimerStarted)
+        {
+            state = 3;
+        }
         //Debug.Log(agent.destination);
         switch (state) 
         {
@@ -150,7 +154,7 @@ public class AI : MonoBehaviour
             shoot.Play();
             if (Random.Range(0, 4) == 3)
             {
-                //game.DoDamage(1);
+                game.DoDamage(1);
                 PlayerHit.Play();
             }
             coolDownTimeStamp = Time.timeSinceLevelLoad;

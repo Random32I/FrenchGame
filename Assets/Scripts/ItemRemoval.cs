@@ -22,7 +22,8 @@ public class ItemRemoval : MonoBehaviour
         {
             if (Time.timeSinceLevelLoad - timeStamp >= 20)
             {
-                Destroy(gameObject);
+                gameObject.AddComponent<SliceDisapear>();
+                gameObject.GetComponent<Interactable>().enabled = false;
             }
         }
     }
