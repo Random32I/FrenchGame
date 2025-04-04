@@ -57,43 +57,48 @@ public class AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (game.deathTimerStarted)
+        if (game.paused)
         {
-            state = 3;
+            if (agent.enabled) agent.enabled = false;
         }
-        //Debug.Log(agent.destination);
-        switch (state) 
+        else
         {
-            case 0:
-                Wander();
-                break;
-            case 1:
-                Approach();
-                if (game.inHealingZone)
-                {
-                    state = 3;
-                    return;
-                }
-                break;
-            case 2:
-                if (enemyType == 0)
-                {
+            if (!agent.enabled) agent.enabled = true;
+            if (game.deathTimerStarted)
+            {
+                state = 3;
+            }
+            //Debug.Log(agent.destination);
+            switch (state)
+            {
+                case 0:
+                    Wander();
+                    break;
+                case 1:
+                    Approach();
+                    if (game.inHealingZone)
+                    {
+                        state = 3;
+                        return;
+                    }
+                    break;
+                case 2:
                     Attack();
-                }
-                else if (Mathf.Abs((transform.position - player.position).magnitude) > agent.stoppingDistance + 1)
-                {
-                    state = 3;
-                    return;
-                }
-                if (game.inHealingZone)
-                {
-                    state = 3;
-                    return;
-                }
-                break;
-            case 3:
-                Evacuate();
-                break;
+                    if (Mathf.Abs((transform.position - player.position).magnitude) > agent.stoppingDistance + 1)
+                    {
+                        state = 3;
+                        return;
+                    }
+                    if (game.inHealingZone)
+                    {
+                        state = 3;
+                        return;
+                    }
+                    break;
+                case 3:
+                    Evacuate();
+                    break;
+            }
         }
     }
 
@@ -149,12 +154,12 @@ public class AI : MonoBehaviour
         anim.SetBool("IsAttacking", true);
         anim.SetInteger("RandomAnim", Random.Range(0,2));
 
-        if (Time.timeSinceLevelLoad - coolDownTimeStamp >= 4)
+        if (Time.timeSinceLevelLoad - coolDownTimeStamp >= 3)
         {
             shoot.Play();
-            if (Random.Range(0, 4) == 3)
+            if (Random.Range(0, 3) == 2)
             {
-                game.DoDamage(1);
+                game.DoDamage(15);
                 PlayerHit.Play();
             }
             coolDownTimeStamp = Time.timeSinceLevelLoad;
@@ -193,7 +198,7 @@ public class AI : MonoBehaviour
                 }
                 break;
             case 1:
-                if (Random.Range(0, 4) == 3)
+                if (Random.Range(0, 3) == 2)
                 {
                     game.SpawnItem(2, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
                 }
@@ -205,7 +210,7 @@ public class AI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.transform.name.Contains("Bullet") && collision.transform.tag != "Shot") || collision.transform.name.Contains("Hand"))
+        if ((collision.transform.name.Contains("Bullet") && collision.transform.tag == "Shot") || collision.transform.name.Contains("Hand"))
         {
             gameObject.AddComponent<SliceDisapear>();
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
@@ -217,31 +222,28 @@ public class AI : MonoBehaviour
 
     public void Death()
     {
-        state = -1;
-        switch (enemyType)
+        if (state != -1)
         {
-            case 0:
+            state = -1;
+            switch (enemyType)
+            {
+                case 0:
 
-                int bullets = Random.Range(2, 5);
-                for (int i = 0; i < bullets; i++)
-                {
-                    game.SpawnItem(0, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
-                }
-                if (Random.Range(0, 4) == 3)
-                {
-                    game.SpawnItem(1, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
-                }
-                break;
-            case 1:
-                if (Random.Range(0, 4) == 3)
-                {
-                    game.SpawnItem(2, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
-                }
-                break;
+                    int bullets = Random.Range(2, 5);
+                    for (int i = 0; i < bullets; i++)
+                    {
+                        game.SpawnItem(0, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    }
+                    if (Random.Range(0, 4) == 3)
+                    {
+                        game.SpawnItem(1, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+                    }
+                    break;
+            }
+            game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
+            Ragdoll();
+            spawner.EnemyKilled(enemyIndex);
         }
-        game.SpawnItem(6, transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f)));
-        Ragdoll();
-        spawner.EnemyKilled(enemyIndex);
     }
 
     public void Ragdoll()

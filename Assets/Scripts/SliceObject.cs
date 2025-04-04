@@ -28,6 +28,7 @@ public class SliceObject : CutterBehaviour
             sliceSound.Play();
             collision.transform.tag = "Untagged";
             Cut(collision.gameObject);
+            collision.transform.localScale = Vector3.one;
             collision.gameObject.GetComponent<AI>().Death();
         }
     }

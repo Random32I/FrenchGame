@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] float health = 100;
     [SerializeField] GameObject[] items;
     [SerializeField] GameObject player;
+    [SerializeField] Transform playerPos;
+    [SerializeField] GameObject Tent;
     [SerializeField] TextMeshProUGUI healthText;
 
     public bool inHealingZone;
+
+    public bool paused;
 
     [SerializeField] AudioSource[] audioSources;
 
@@ -21,17 +26,22 @@ public class GameManager : MonoBehaviour
     public static bool isSeatedMode;
     public bool isEnviornmentCorrectSize = false;
 
-    [SerializeField] float SeatedScale;
-
     public bool deathTimerStarted = false;
     float deathTimeStamp;
+    [SerializeField] GameObject DeathMenu;
+
+    [SerializeField] GameObject Pointer;
+    [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject teleporting;
+    [SerializeField] SteamVR_Action_Boolean pause;
+
 
     // Start is called before the first frame update
     void Start()
     {
         if (isSeatedMode)
         {
-            player.transform.localScale = Vector3.one * SeatedScale;
+            player.transform.localScale = Vector3.one * 1.3f;
             isEnviornmentCorrectSize = true;
         }
     }
@@ -39,12 +49,32 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthText)
+        if (PauseMenu)
         {
-            healthText.text = $"{health}";
+            if (pause.stateDown)
+            {
+                TogglePause();
+            }
         }
-        if (health == 0)
+
+        if (Tent)
         {
+            if ((Tent.transform.position - playerPos.position).magnitude <= 15)
+            {
+                inHealingZone = true;
+            }
+            else
+            {
+                inHealingZone = false;
+            }
+            if (healthText)
+            {
+                healthText.text = $"{(int)health}";
+            }
+        }
+        if (health <= 0)
+        {
+            health = 0;
             OnDeath();
         }
         if (inHealingZone)
@@ -54,7 +84,12 @@ public class GameManager : MonoBehaviour
 
         if (isSeatedMode && !isEnviornmentCorrectSize)
         {
-            player.transform.localScale = Vector3.one * SeatedScale;
+            player.transform.localScale = Vector3.one * 1.3f;
+            isEnviornmentCorrectSize = true;
+        }
+        else if (!isSeatedMode && !isEnviornmentCorrectSize)
+        {
+            player.transform.localScale = Vector3.one;
             isEnviornmentCorrectSize = true;
         }
 
@@ -74,14 +109,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void TogglePause()
+    {
+        teleporting.SetActive(!teleporting.activeSelf);
+        PauseMenu.SetActive(!PauseMenu.activeSelf);
+        Pointer.SetActive(!Pointer.activeSelf);
+        paused = !paused;
+    }
+
     public void SetSeatedPlay(bool state)
     {
         isSeatedMode = state;
+        isEnviornmentCorrectSize = false;
     }
 
     public void SetVolume(float amount)
     {
         Volume = amount;
+        isVolumeSet = false;
     }
 
     public float GetHealth()
@@ -96,7 +141,14 @@ public class GameManager : MonoBehaviour
 
     public void Heal(float amount)
     {
-        health += amount;
+        if (health + amount <= 200)
+        {
+            health += amount;
+        }
+        else
+        {
+            health = 200;
+        }
     }
 
     public void SpawnItem(int itemID, Vector3 spawnPos)
@@ -109,6 +161,7 @@ public class GameManager : MonoBehaviour
     void OnDeath()
     {
         deathTimerStarted = true;
+        DeathMenu.SetActive(true);
         deathTimeStamp = Time.timeSinceLevelLoad;
     }
 }

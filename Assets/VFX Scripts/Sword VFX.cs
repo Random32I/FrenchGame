@@ -49,7 +49,7 @@ public class SwordVFX : MonoBehaviour
         {
             bool vfxActive = angularVelocity > angularVelocityThreshold;
             vfx.enabled = vfxActive;
-            if (vfxActive && !audioPlayed)
+            if (angularVelocity > angularVelocityThreshold + 1 && !audioPlayed)
             {
                 swordWoosh.Play();
                 audioPlayed = true;

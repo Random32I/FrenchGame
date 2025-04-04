@@ -16,7 +16,7 @@ public class Flintlock : MonoBehaviour
     public bool fullyLoaded;
     int bulletCount;
 
-    public static Flintlock instance;
+    public static Flintlock instance = null;
 
     bool isShot;
 
@@ -37,7 +37,7 @@ public class Flintlock : MonoBehaviour
     void Start()
     {
         shootAction = shoot1;
-        if (instance != null)
+        if (!instance)
         {
             instance = this;
         }

@@ -56,4 +56,15 @@ public class Buttons : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Resume()
+    {
+        game.TogglePause();
+    }
+
+    public void TitleScreen()
+    {
+        Destroy(player);
+        SceneManager.LoadScene("MainMenu");
+    }
 }
